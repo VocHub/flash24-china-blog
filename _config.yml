@@ -1,0 +1,136 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+github: [metadata]
+
+title: Marvin 的 Swift 與程式開發筆記
+locale: "zh-TW"
+email: atimis19@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  這個 blog 是包含了的軟體開發、投資、經驗和生活故事。透過這個 blog，我希望分享自己的生活和見聞，同時也透過這個平台與讀者交流互動，建立起彼此的社群。
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://moonandeye.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: atimisMoon
+github_username:  MoonAndEye
+
+search: true
+author_profile: true
+
+google_analytics: "G-VLY0RSDRM1"
+
+analytics:
+  provider               : "google" # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id          : "G-VLY0RSDRM1"
+    anonymize_ip         : # true, false (default)
+
+header_pages:
+  - about.md
+  - categories.md
+
+# Build settings
+# theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.18.1"
+
+image_extensions: ['jpg', 'jpeg', 'png']
+
+plugins:
+  - jekyll-feed
+  - jemoji
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-include-cache
+
+# 原來的設定，但為了改善 SEO 先改成 title，但這又會卡 paginate，先改回來
+# permalink: /:categories/:year/:month/:day/:title:output_ext
+# permalink: /:categories/:title:output_ext
+
+paginate: 10
+paginate_path: "/page:num/"
+
+# Site Author
+author:
+  name             : "Marvin Lin" # 側邊作者名稱
+  avatar           : "/assets/author/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "喜歡 Swift 的開發者" # 側邊作者簡介
+  location         : "Taipei, Taiwan"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      # url: mailto:your.name@email.com
+    - label: "HomePage"
+      icon: "fas fa-fw fa-link"
+      url: "https://moonandeye.github.io/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/atimisMoon"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://facebook.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url:  "https://github.com/Moonandeye"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url: "https://instagram.com/"
+
+# Disqus 評論
+disqus:
+  shortname: moonandeye
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author: "Marvin Lin"
+      read_time: false
+      share: true
+      related: true
+      author_profile: true
+      toc: true
+      toc_label: "概覽" # default: Content
+      toc_icon: "book"  # corresponding Font Awesome icon name without the "fa" prefix
+      toc_sticky: true   # enables sticky toc
+      comments: true

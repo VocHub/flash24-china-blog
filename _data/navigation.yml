@@ -1,0 +1,15 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "軟體開發"
+    url: /programming/
+  - title: "Swift"
+    url: /swift/
+  - title: "財經新聞"
+    url: /finance/
+  - title: "生活"
+    url: /life/
+  - title: "Swift 社群資源"
+    url: /swift-community/
+  - title: "About"
+    url: /about/

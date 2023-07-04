@@ -1,0 +1,54 @@
+---
+layout: archive
+author_profile: true
+---
+
+<!-- include 沒有作用，先用 html -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">Markets today</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "description": "Apple",
+      "proName": "NASDAQ:AAPL"
+    },
+    {
+      "description": "Microsoft",
+      "proName": "NASDAQ:MSFT"
+    }
+  ],
+  "colorTheme": "light",
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+{{ content }}
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% for post in posts %}
+    {% include archive-single.html type=entries_layout %}
+    <p class="entry-meta small-date">{{ post.date | date: "%b %-d, %Y" }}</p>
+  {% endfor %}
+</div>
+
+{% include paginator.html %}
